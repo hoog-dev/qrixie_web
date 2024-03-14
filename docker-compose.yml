@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile
     container_name: qrixie_web
     ports:
-      - '3010:3000'
+      - '3011:3000'
     labels:
       - traefik.http.routers.qrixie.rule=Host(`qrixie.com`)
       - traefik.http.routers.qrixie.tls=true

@@ -1,0 +1,12 @@
+version: '3.3'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.loc
+    container_name: qrixie_web
+    ports:
+      - '5173:5173'
+    volumes:
+      - .:/app
+      - /app/node_modules

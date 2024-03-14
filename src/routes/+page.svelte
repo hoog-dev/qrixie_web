@@ -35,7 +35,7 @@
                 anchorOuterFill: 'black',
                 moduleFill: 'black',
               }}
-              class='bg-white max-h-[300px] max-w-[300px]'
+              class='bg-white w-full max-h-[300px] max-w-[300px]'
             />
         </div>
 			</section>

@@ -20,6 +20,7 @@ export default {
       offwhite: '#CCD6F6',
       fadedwhite: '#8892B0',
       bg: '#0A192F',
+      darkblue: '#0A192F',
       bglight: '#112240'
     }
   },

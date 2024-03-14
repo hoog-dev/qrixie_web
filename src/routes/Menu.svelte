@@ -30,7 +30,7 @@ import { goto } from '$app/navigation';
 </script>
 
 <div class="hidden md:flex items-center justify-between sticky top-0 py-4">
-    <div class="flex items-center justify-center text-primary px-4 h-12 border-2 border-primary shadow-logo">
+    <div class="flex items-center justify-center bg-darkblue text-primary px-4 h-12 border-2 border-primary shadow-logo">
         <a href="/">
             QRixie
         </a>
@@ -45,7 +45,7 @@ import { goto } from '$app/navigation';
 </div>
 
 <div class="flex flex-wrap md:hidden items-center justify-between sticky top-0">
-    <div class="flex items-center justify-center text-primary h-12 px-4 border border-primary shadow-logo">
+    <div class="flex items-center justify-center bg-darkblue text-primary h-12 px-4 border border-primary shadow-logo">
         <a href="/">
             QRixie
         </a>

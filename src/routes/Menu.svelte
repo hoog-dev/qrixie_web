@@ -50,16 +50,18 @@ import { goto } from '$app/navigation';
             QRixie
         </a>
     </div>
-    <div class="flex items-center" on:click={toggleMobileMenu}>
+   <!--
+   <div class="flex items-center" on:click={toggleMobileMenu}>
         <svg width="26" height="26" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
             <path fill="#53D2B8" d="M160 448a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32H160zm448 0a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32H608zM160 896a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32H160zm448 0a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32H608z"/>
         </svg>
     </div>
+    -->
     
     <div class:hidden={!showMobileMenu} class:flex={showMobileMenu} class="flex flex-wrap content-start fixed top-0 left-0 w-full h-full bg-bglight py-4 px-4">
         <div class="flex items-center justify-between w-full">
             <a href="/" class="flex items-center justify-center h-12 px-4 mb-8 text-primary border border-primary shadow-logo">
-                hoog.dev
+                QRixie
             </a>
             <div on:click={toggleMobileMenu} class="flex items-center">
                 <svg width="26" height="26" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

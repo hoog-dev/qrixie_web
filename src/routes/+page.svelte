@@ -20,7 +20,6 @@
           <h2 class="text-fadedwhite text-4xl md:text-6xl font-bold tracking-wider">Forever Free</h2>
           <p class="mt-4 tracking-wide">
           QRixie is a free QR code generator that allows you to create QR codes for URLs, text, phone numbers, SMS, email addresses, and more. 
-          You can also customize the QR code with colors, add a logo, and download the QR code in PNG, SVG, or EPS format. 
           QRixie is free, easy to use, and does not require any registration or sign-up. 
           Create your QR code now and download it for free.
           </p>

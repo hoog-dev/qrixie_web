@@ -2,25 +2,38 @@
 	import { qr } from '@svelte-put/qr/img'
 	import * as Base from '$lib/components/base'
 	export let data
-	let qr_url = ''
 	let link = 'https://qrixie.com'
 	let ssid = ''
 	let password = ''
 	let activeType = 'link'
 
+  let qrData = 'https://qrixie.com'
+  let qrShape = 'circle'
+  let qrAnchorInnerFill = '#000000'
+  let qrAnchorOuterFill = '#000000'
+  let qrModuleFill = '#000000'
+
+  let showDesignSettings = false
+
 	setInterval(generateURL, 1000)
 
 	function generateURL() {
+    console.log('generate')
 		if (activeType == 'link') {
-			qr_url = link
+			qrData = link
 		} else if (activeType == 'wifi') {
-			qr_url = `WIFI:T:WPA;S:${ssid};P:${password};;`
+			qrData = `WIFI:T:WPA;S:${ssid};P:${password};;`
 		}
 	}
 
 	function selectType(type: string) {
 		activeType = type
 	}
+
+  function toggleDesignSettings() {
+      showDesignSettings = !showDesignSettings
+      console.log(showDesignSettings)
+  }
 </script>
 
 <svelte:head>
@@ -28,7 +41,6 @@
 	<meta name="description" content="QRixie - The free QR generator" />
 </svelte:head>
 
-<!-- Section - Intro -->
 <section class="flex flex-wrap items-center content-center mt-8 mb-4">
 	<div class="w-full lg:w-1/2">
 		<p class="w-full text-primary mb-4 tracking-wide font-fira">QR Code Generator</p>
@@ -89,18 +101,38 @@
 				</div>
 			{/if}
 		</div>
-	</div>
-	<div class="flex justify-center w-full lg:w-1/2 mt-8">
-		<img
-			use:qr={{
-				data: qr_url,
-				shape: 'circle',
-				anchorInnerFill: 'black',
-				anchorOuterFill: 'black',
-				moduleFill: 'black'
-			}}
-			class="bg-white w-full max-h-[400px] max-w-[400px]"
-		/>
-	</div>
+    <div>
+      <button on:click={() => toggleDesignSettings()} class='mt-2 underline'>Design settings</button>
+      {#if showDesignSettings}
+      <div class='bg-[#8892AF] text-black mt-2 p-2 rounded'>
+        <div>
+          <label for='shape'>Shape</label>
+          <select bind:value={qrShape}>
+            <option value='circle'>Circle</option>
+            <option value='square'>Square</option>
+          </select>
+        </div>
+        <div>
+          <label for='anchorInnerFill'>Anchor Inner Fill</label>
+          <input type='color' id='anchorInnerFill' name='anchorInnerFill' bind:value={qrAnchorInnerFill}>
+        </div>
+        <div>
+          <label for='anchorOuterFill'>Anchor Outer Fill</label>
+          <input type='color' id='anchorOuterFill' name='anchorOuterFill' bind:value={qrAnchorOuterFill}>
+        </div>
+        <div>
+          <label for='moduleFill'>Module Fill</label>
+          <input type='color' id='moduleFill' name='moduleFill' bind:value={qr.moduleFill}>
+        </div>
+      </div>
+      {/if} 
+    </div>
+  </div>
+  <div class="flex justify-center w-full lg:w-1/2 mt-8">
+    <img
+      use:qr={{data: qrData, shape: qrShape, anchorInnerFill: qrAnchorInnerFill, anchorOuterFill: qrAnchorOuterFill }}
+      class="bg-white w-full max-h-[400px] max-w-[400px]"
+    />
+  </div>
+
 </section>
-<!-- End Section - Intro -->

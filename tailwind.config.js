@@ -5,7 +5,8 @@ export default {
     extend: {
       fontFamily: {
         poppins: ['Poppins'],
-        fira: ['Fira Mono']
+        fira: ['Fira Mono'],
+        gtwalsheim: ['"GT Walsheim"']
       },
       boxShadow: {
         btn: '4px 4px 0 0 #52D2B8',

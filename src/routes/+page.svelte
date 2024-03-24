@@ -18,7 +18,6 @@
 	setInterval(generateURL, 1000)
 
 	function generateURL() {
-    console.log('generate')
 		if (activeType == 'link') {
 			qrData = link
 		} else if (activeType == 'wifi') {
@@ -43,9 +42,9 @@
 
 <section class="flex flex-wrap items-center content-center mt-8 mb-4">
 	<div class="w-full lg:w-1/2">
-		<p class="w-full text-primary mb-4 tracking-wide font-fira">QR Code Generator</p>
-		<h1 class="text-offwhite text-4xl md:text-6xl font-bold tracking-wider mb-4">QRixie</h1>
-		<h2 class="text-fadedwhite text-4xl md:text-6xl font-bold tracking-wider">Forever Free</h2>
+		<p class="w-full text-primary text-4xl mb-4 tracking-wide font-gtwalsheim">QRixie</p>
+		<h1 class="text-offwhite text-4xl md:text-6xl font-gtwalsheim font-bold tracking-wider mb-4">A Forever Free QR Code Generator</h1>
+    
 		<p class="mt-4 tracking-wide">
 			QRixie is a free QR code generator that allows you to create QR codes for URLs, text, phone
 			numbers, SMS, email addresses, and more. QRixie is free, easy to use, and does not require any
@@ -59,6 +58,7 @@
 					class:bg-primary={activeType == 'link'}
 					class:text-white={activeType == 'link'}
 				>
+        <img src='/icons/icon-globe-white.svg' class='w-4 h-4 inline-block mr-1' alt='wifi icon'>   
 					Link
 				</div>
 				<div
@@ -67,6 +67,7 @@
 					class:bg-primary={activeType == 'wifi'}
 					class:text-white={activeType == 'wifi'}
 				>
+          <img src='/icons/icon-wifi-white.svg' class='w-4 h-4 inline-block mr-1' alt='wifi icon'>   
 					WiFi
 				</div>
 			</div>
@@ -102,7 +103,7 @@
 			{/if}
 		</div>
     <div>
-      <button on:click={() => toggleDesignSettings()} class='mt-2 underline'>Design settings</button>
+      <button on:click={() => toggleDesignSettings()} class='mt-2 underline-offset-4 underline'>Appearance settings</button>
       {#if showDesignSettings}
       <div class='bg-[#8892AF] text-black mt-2 p-2 rounded'>
         <div>
@@ -122,15 +123,16 @@
         </div>
         <div>
           <label for='moduleFill'>Module Fill</label>
-          <input type='color' id='moduleFill' name='moduleFill' bind:value={qr.moduleFill}>
+          <input type='color' id='moduleFill' name='moduleFill' bind:value={qrModuleFill}>
         </div>
       </div>
       {/if} 
     </div>
   </div>
-  <div class="flex justify-center w-full lg:w-1/2 mt-8">
+  <div class="flex flex-wrap justify-center w-full lg:w-1/2 mt-8">
+  <p class='w-full text-center mb-2'>(Right image click to download)</p>
     <img
-      use:qr={{data: qrData, shape: qrShape, anchorInnerFill: qrAnchorInnerFill, anchorOuterFill: qrAnchorOuterFill }}
+      use:qr={{data: qrData, shape: qrShape, anchorInnerFill: qrAnchorInnerFill, anchorOuterFill: qrAnchorOuterFill, moduleFill: qrModuleFill }}
       class="bg-white w-full max-h-[400px] max-w-[400px]"
     />
   </div>

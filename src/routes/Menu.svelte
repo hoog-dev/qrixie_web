@@ -29,12 +29,9 @@ import { goto } from '$app/navigation';
 
 </script>
 
-<div class="hidden md:flex items-center justify-between sticky top-0 py-4">
-    <div class="flex items-center justify-center bg-darkblue text-primary px-4 h-12 border-2 border-primary shadow-logo">
-        <a href="/">
-            QRixie
-        </a>
-    </div>
+<div class="hidden md:flex items-center justify-between top-0 py-4">
+
+		<p class="w-full text-darkgray -tracking-wider text-4xl font-bold mb-4">QRixie</p>
     <menu class="hidden md:flex gap-4 font-fira text-sm">
         {#each items as item}
             <li>
@@ -44,12 +41,9 @@ import { goto } from '$app/navigation';
     </menu>
 </div>
 
-<div class="flex flex-wrap md:hidden items-center justify-between sticky top-0">
-    <div class="flex items-center justify-center bg-darkblue text-primary h-12 px-4 border border-primary shadow-logo">
-        <a href="/">
-            QRixie
-        </a>
-    </div>
+<div class="flex flex-wrap md:hidden items-center justify-between top-0">
+
+	<p class="w-full text-darkgray -tracking-wider text-4xl font-bold mb-4">QRixie</p>
    <!--
    <div class="flex items-center" on:click={toggleMobileMenu}>
         <svg width="26" height="26" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">

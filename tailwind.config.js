@@ -6,7 +6,7 @@ export default {
       fontFamily: {
         poppins: ['Poppins'],
         fira: ['Fira Mono'],
-        gtwalsheim: ['"GT Walsheim"']
+        GTWalsheim: ['"GT Walsheim"']
       },
       boxShadow: {
         btn: '4px 4px 0 0 #52D2B8',
@@ -16,13 +16,17 @@ export default {
     colors: {
       white: '#ffffff',
       black: '#000000',
-      primary: '#52D2B8',
+      primary: '#4F75FE',
       secondary: '#1D3A5F',
       offwhite: '#CCD6F6',
       fadedwhite: '#8892B0',
       bg: '#0A192F',
       darkblue: '#0A192F',
-      bglight: '#112240'
+      bglight: '#112240',
+      darkgray: '#2D2323',
+      lightgray: "#D5D3D3",
+      beige: '#FBF9F5',
+      text: "#1B1C21"
     }
   },
   plugins: []

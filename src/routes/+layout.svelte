@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Menu from './Menu.svelte';
+  import Footer from './Footer.svelte';
 	import './styles.css';
 	import "../app.css";
 </script>
@@ -10,5 +11,6 @@
 		<main>
 			<slot />
 		</main>
+    <Footer></Footer>
 	</div>
 </div>

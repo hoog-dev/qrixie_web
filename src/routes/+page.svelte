@@ -168,7 +168,7 @@
       commonly used for marketing, advertising, and sharing information.
       </p>
   </div>
-  <div class="flex justify-center h-96 w-full rounded p-12">
+  <div class="flex justify-center h-96 w-full rounded">
     <img src="/illustrations/illustration-scan.svg" alt="QR code" class="w-full max-w-[400px] h-full object-contain rounded" />
   </div>
 

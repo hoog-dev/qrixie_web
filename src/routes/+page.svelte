@@ -37,6 +37,30 @@
       showDesignSettings = !showDesignSettings
       console.log(showDesignSettings)
   }
+
+  function downloadQR() {
+    // Get the image element
+    const img = document.getElementById('qr-code');
+    
+    // Get the image URL
+    const imageUrl = img.src;
+    
+    // Create a temporary anchor element
+    const link = document.createElement('a');
+    link.href = imageUrl;
+
+    // Set the download attribute with a default file name
+    link.download = 'qr-code.svg';
+
+    // Append the link to the body
+    document.body.appendChild(link);
+
+    // Programmatically click the link to trigger the download
+    link.click();
+
+    // Remove the link from the document
+    document.body.removeChild(link);
+    }
 </script>
 
 <svelte:head>
@@ -151,11 +175,12 @@
     </div>
   </div>
   <div class="flex flex-wrap justify-center w-full lg:w-1/2 mt-8">
-  <p class='w-full text-center mb-2'>(Right image click to download)</p>
-    <img
-      use:qr={{data: qrData, shape: qrShape, anchorInnerFill: qrAnchorInnerFill, anchorOuterFill: qrAnchorOuterFill, moduleFill: qrModuleFill }}
-      class="bg-white w-full max-h-[400px] max-w-[400px]"
-    />
+      <img
+        use:qr={{data: qrData, shape: qrShape, anchorInnerFill: qrAnchorInnerFill, anchorOuterFill: qrAnchorOuterFill, moduleFill: qrModuleFill }}
+        class="bg-white w-full max-h-[400px] max-w-[400px]"
+        id="qr-code"
+      />
+      <button on:click={() => downloadQR()} class='w-full mt-2 underline-offset-4 underline'>Download QR code</button>
   </div>
 </section>
 
